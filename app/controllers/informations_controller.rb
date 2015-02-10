@@ -1,9 +1,10 @@
 class InformationsController < ApplicationController
+  
   def requestshow
-  	render :layout => false
+  	render :layout => 'homepage'
   end
 
   def contactus
-  	render :layout => false
+  	render :layout => 'homepage'
   end
 end

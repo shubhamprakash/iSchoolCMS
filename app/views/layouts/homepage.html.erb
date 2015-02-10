@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "ISchoolCMS" %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
+
+    <div class="navbar navbar-static-top" style="background-color: #FFF;height:122px;width: 98%;clear: both;">
+      <div class="leftbox" style="width:65%;">
+        <%= link_to image_tag("logo.png"), root_url %>
+      </div>
+      <div style="float: right;width: 35%;height: 100%;">
+        <div style="width: 100%;height: 50%;float:top; padding-top: 15px;">
+          <%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= form_for(User.new, as: "User",url: new_user_session_path) do |f| %>
+            <%= f.email_field :email, autofocus: true %>
+            <%= f.password_field :password, autocomplete: "off" %>
+            <%= f.submit "Log in" %>
+          <% end %>
+        </div>
+
+        <div style="width: 100%;height: 50%;">
+          <div style="width: 25%;height: 100%; float: left"><%= link_to "HOME", root_url, :style => "color: black" %></div>
+          <div style="width: 40%;height: 100%; float:left"><%= link_to "REQUEST A DEMO", informations_requestshow_path, :style => "color: black" %></div>
+          <div style="width: 35%;height: 100%; float:left"><%= link_to "CONTACT US", informations_contactus_path, :style => "color: black" %></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <%= bootstrap_flash %>
+          <%= yield %>
+        </div>
+      </div><!--/row-->
+      
+    </div> <!-- /container -->
+
+  </body>
+</html>

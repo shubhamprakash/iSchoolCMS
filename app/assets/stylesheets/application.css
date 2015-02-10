@@ -28,6 +28,7 @@
 	  left: 0;
 	  padding: 10px;
 	  text-align: center;
+	  font-size:20px;
 	}
 
 	.home-carousel {
@@ -38,4 +39,13 @@
 
 	.inner{
 		text-align: center;
+	}
+	.field{
+		line-height: 20px; 
+		width: 750px;
+		font-size: 16px;
+	}
+
+	body{
+		margin-bottom: 50px;
 	}
