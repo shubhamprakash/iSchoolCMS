@@ -27,10 +27,15 @@
 	  top: 0;
 	  left: 0;
 	  padding: 10px;
+	  text-align: center;
 	}
 
 	.home-carousel {
 		width: 1170px auto;
 		padding:30px;
 		background-color: 
+	}
+
+	.inner{
+		text-align: center;
 	}
