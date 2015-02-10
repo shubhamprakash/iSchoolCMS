@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'informations/request'
+  get 'informations/requestshow'
 
   get 'informations/contactus'
 

@@ -38,10 +38,26 @@
         <%= link_to image_tag("logo.png"), root_url %>
       </div>
       <div style="float: right;width: 35%;height: 100%;">
+<<<<<<< HEAD
       	<div style="width: 100%;height: 50%;float:top;">hello</div>
       	<div style="width: 100%;height: 50%;">
       		<%= link_to "HOME", root_url %>
       		<%= link_to "REQUEST A DEMO", informations_request_path %>
+=======
+
+      	<div style="width: 100%;height: 50%;float:top;padding: 11px;">
+      		<%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      		<%= form_for(User.new, as: "User",url: new_user_session_path) do |f| %>
+    				<%= f.email_field :email, autofocus: true %>
+				    <%= f.password_field :password, autocomplete: "off" %>
+    				<%= f.submit "Log in" %>
+					<% end %>
+      	</div>
+
+      	<div style="width: 100%;height: 50%;">
+      		<%= link_to "HOME", root_url %>
+      		<%= link_to "REQUEST A DEMO", informations_requestshow_path %>
+>>>>>>> 34774397cdcd33c735758ce2926b23c6f85e76c3
       		<%= link_to "CONTACT US", informations_contactus_path %>
       	</div>
       </div>
