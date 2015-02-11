@@ -32,26 +32,34 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
-
-    <div class="navbar navbar-static-top" style="background-color: #FFF;height:122px;width: 100%;clear: both;box-shadow: 0 0 10px rgba(0,0,0,.1);">
-      <div class="leftbox" style="width:63%;">
-        <%= link_to image_tag("logo.png"), root_url %>
-      </div>
-      <div class="rightbox" style="float: right;width: 37%;height: 100%;display: table;">
-        <div style="width: 100%;height: 50%;float:top; padding-top: 15px;">
-          <%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <%= form_for(User.new, as: "User",url: new_user_session_path) do |f| %>
-            <%= f.email_field :email,:placeholder => "Name/Email", :style => "height: 35px;background-color:#f9f9f9;border: 1px solid #dfdfdf;border-radius:5px;padding:10px;" %>
-            <%= f.password_field :password, autocomplete: "off", :placeholder => "Password", :style => "height:35px;background-color:#f9f9f9;border: 1px solid #dfdfdf;border-radius:5px;padding:10px;" %>
-            <%= f.submit "Log in", :style => "height: 33px;padding: 0 12px;color: white;background: none repeat scroll 0 0 #ea6531;border-radius: 5px;border: 0px;" %>
-          <% end %>
+  
+    <div class="row">
+      <div class="navbar navbar-static-top" >
+        <div class="leftbox">
+          <%= link_to image_tag("logo.png"), root_url %>
         </div>
+        
+        <div class="rightbox" >
+          <form class="form-inline">
+            <div class="upper">
+              <div class="form-group">
+                <%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <%= form_for(User.new, as: "User",url: new_user_session_path) do |f| %>
+                  <%= f.email_field :email, autofocus: true, :placeholder => "Name/Email", :class => "text-field" %>
+                  <%= f.password_field :password, autocomplete: "off", :placeholder => "Password", :class => "text-field" %>
+                  <%= f.submit "Log in", :class => "login-button" %>
+                <% end %>
+              </div>
+            </div>
+          </form>
 
-        <div style="width: 100%;height: 50%;padding-top:20px;">
-          <div style="width: 20%;height: 100%; float: left"><%= link_to "HOME", root_url, :style => "color: black" %></div>
-          <div style="width: 35%;height: 100%; float:left"><%= link_to "REQUEST A DEMO", informations_requestshow_path, :style => "color: black" %></div>
-          <div style="width: 25%;height: 100%; float:left;color: black"><%= link_to "CONTACT US", informations_contactus_path, :style => "color: black" %></div>
-          <div style="width: 20%;height: 100%; float:left;color: black"><%= link_to "SIGNUP", user_registration_path, :style => "color: black" %></div>
+          <div class="lower">
+              <a href="/">HOME </a>
+              <a href="/informations/requestshow">REQUEST A DEMO </a>
+              <a href="/informations/contactus">CONTACT US</a>
+              <a href="/users/sign_up">SIGNUP</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -63,8 +71,6 @@
           <%= yield %>
         </div>
       </div><!--/row-->
-      
     </div> <!-- /container -->
-
   </body>
 </html>

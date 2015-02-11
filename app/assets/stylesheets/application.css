@@ -16,11 +16,16 @@
 
  .leftbox {
 		background: url("logoBg.gif") no-repeat scroll left top rgba(0, 0, 0, 0);
+		-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
 		float: left;
 		height: 122px;
 		width: 408px;
 		padding: 40px 0 0 34px;
 	}
+
 	.carousel-caption {
 	  position: absolute;
 	  right: 0;
@@ -40,15 +45,73 @@
 	.inner{
 		text-align: center;
 	}
+
 	.field{
 		line-height: 20px; 
 		width: 750px;
 		font-size: 16px;
 	}
 
+	.navbar-static-top{
+		background-color: #FFF;
+		height:122px;
+		width: 100%;
+		clear: both;
+		box-shadow: 0 0 10px rgba(0,0,0,.1);"
+	}
+
 	body{
 		margin-bottom: 50px;
+	
 	}
+
 	.home-textfield {
 		height: 35px;
 	}
+
+	.rightbox{
+		float: right; 
+		width: 37%; 
+		height: 100%; 
+		display: table;
+	}
+
+	.lower ,.upper{
+		width: 100%; 
+		height: 50%; 
+		padding-top:20px;
+		float: left;
+		overflow: hidden;
+  }
+
+  a{
+  	color: black;
+  	margin-right: 42px;
+  }
+
+  .link{
+  	float: left;
+  	padding-top: 10px;
+  }
+
+  .text-field{
+  	height: 35px;
+  	background-color:#f9f9f9;
+  	border: 1px solid #dfdfdf;
+  	border-radius:5px;
+  	padding:10px;
+  	width: 190px;
+  }
+
+  .login-button{
+  	height: 33px;
+  	padding: 0 12px;
+  	color: white;
+  	background: none repeat scroll 0 0 #ea6531;
+  	border-radius: 5px;
+  	border: 0px;
+  }
+
+  .navbar{
+
+  }
