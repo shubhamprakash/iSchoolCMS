@@ -57,7 +57,7 @@
   	border: 0px;
   }
 
- .navbar{
+ .mynavbar {
  		background: url("logoBg.gif") no-repeat scroll left top rgba(0, 0, 0, 0);
 		float: left;
 		height: 122px;
@@ -65,15 +65,15 @@
 		padding: 40px 0 0 34px;
 	}
 
-	.navbar-default{
+	.mynavbar-default{
 		background-color: #FFF;
 		height:122px;
 		width: 100%;
 		clear: both;
-		box-shadow: 0 0 10px rgba(0,0,0,.1);"
+		box-shadow: 0 0 10px rgba(0,0,0,.1);
 	}
 
-	.navbar-right{
+	.mynavbar-right{
 		margin-top: -18px;
 	}
 
@@ -90,6 +90,29 @@
 	border-radius:5px;
   }
 
- 
+   #dps-delhi {
+  	float: right;
+  	margin-right:30px;
+  	font-size:25px;
+  }
+#example1-container {
+    text-align: center;
+}
+
+#example1 li {
+
+    background: none repeat scroll 0 0 #f2f2f2;
+    border-bottom: 1px dotted #2c8162;
+    color: #4e4e4e;
+    font-size: 14px;
+    line-height: 30px;
+    list-style: outside none none;
+    overflow: none;
+}
+.admin-menu {
+	font-size: 13px;
+  height: 30px;
+  position: relative;
+}
 	
 	
