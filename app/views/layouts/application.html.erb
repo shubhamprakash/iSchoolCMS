@@ -37,49 +37,59 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
-
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">ISchoolCMS</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
-          </ul>
+   
+        <div class="navbar navbar-default navbar-static-top" style="height:80px;">
+          <div class="leftbox" style="height: 80px;padding: 20px 0 0 34px;">
+            <%= link_to image_tag("logo.png"), root_url %>
+          </div>
+          <div>
+            <h3 id="dps-delhi">WELCOME <STRONG>DPS DELHI</STRONG></h3>
+          </div>
         </div>
       </div>
     </div>
+    
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="container">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+              <ul class="nav navbar-nav">
+              </ul>
+            </div>
+          </div>
+        </nav>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9">
-          <%= bootstrap_flash %>
-          <%= yield %>
+        <div class="container">
+          <div class="row no-gutters">
+            <div class="col-lg-8">
+              <%= bootstrap_flash %>
+              <%= yield %>
+            </div>
+            <div class="col-lg-4 " >
+              <div class="panel panel-default" style="background-color: #F8F8F8;margin-top: 30px;">
+                <div class="panel-body">
+                  <div style="text-align:center;color: #b47e1f;">
+                    <h3 style="margin-top: 20px;">What's New</h3>
+                  </div><hr>
+                  <div id="example1-container">
+                    <ul id="example1" style="height: 125px;width:290px;">
+                      <li>Quick call feature - Speed dial your contacts with whom you interact most.</li>
+                      <li>SOS: with one single click - you can flash messages to your contacts along with you GPS location.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div><!--/span-->
+          </div><!--/row-->
+
+          <footer>
+
+          </footer>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
-
-      <footer>
-        <p>&copy; Company 2015</p>
-      </footer>
-
-    </div> <!-- /container -->
-
+      </div>
   </body>
 </html>
