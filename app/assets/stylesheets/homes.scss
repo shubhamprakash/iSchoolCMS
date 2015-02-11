@@ -1,6 +1,9 @@
 .home-body {
 	background-image: image-url("ischoolCMS.gif");
-	background-attachment: fixed;
-  background-size:100% auto;
   background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
