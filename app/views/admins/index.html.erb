@@ -8,11 +8,21 @@
 						
 						<th>Name</th>
 						<th>Address</th>
+						<th>Role </th>
 					</tr>
 				<% @users.each do |user| %>
 					<tr>
 						<td><%= user.first_name %>&nbsp;<%= user.last_name %></td>
 						<td><%= user.address %></td>
+						<%#= user.select :role_id, options_for_select(U.all.collect{|x| [x.role, x.id]}), class: "form-control"%>
+						<% if current_user.role == "super_admin" %>
+						<td><%= select("role", "role_id", User.pluck(:role, :id), { include_blank: true }) %></td>
+						<% else %>
+						<td><%= current_user.role %></td>
+						<% end %>
+
+						<td><%#= user.submit "submit" %></td>
+						<%#= user.select(:role, [['Admin', 'admin'], ['Staff', 'staff'], ['Driver', 'driver']]) %>
 						<td><%= link_to "Remove", admins_index_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 					</tr>
 				<% end %>

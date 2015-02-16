@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'admins/index'
 
+  resource :admins
+
   devise_for :users, :controllers => {:sessions => "users/sessions", :registrations => "users/registrations" }
 
   get 'informations/requestshow'
