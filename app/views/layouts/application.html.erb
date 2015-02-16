@@ -39,50 +39,39 @@
   <body>
     <div class="row">
       <div class="col-md-12">
-        <div class="navbar mynavbar-default navbar-static-top" style="height:80px;background-color: #fff;">
+        <div class=" mynavbar-default navbar-static-top" style="height:80px;background-color: #fff;">
           <div class=" mynavbar leftbox " style="height: 80px;padding: 20px 0 0 34px;">
-            <%= link_to image_tag("logo.png"), root_url %>
+            <%= link_to image_tag("logo.png") %>
           </div>
           <div>
             <h3 id="dps-delhi">WELCOME <STRONG>DPS DELHI</STRONG></h3>
           </div>
-          <div class="container">
-            <div class="navbar-collapse collapse navbar-responsive-collapse">
-              <ul class="nav navbar-nav">
-              </ul>
-            </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row nopadding">
+      <div class="col-md-12">
+        <div class=" mynavbar-default" style="height:50px;background-color: #fff;">
+          <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <span style="font-size:20px;margin-top:10px;"><strong>Welcome Admin</strong></span>
+          <ul class="nav navbar-nav" style="float:right;margin-top:7px;">
+              <% if current_user %>  
+              <%= link_to "Update Profile", edit_user_registration_path, :method => :patch, :class=> "link" %>
+              <%= link_to "Logout", destroy_user_session_path, :method => :delete,:class=> "link" %>
+              <%= link_to "Home", admins_index_path,:class=> "link" %>
+              <% end %>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8">
-              <%= bootstrap_flash %>
-              <%= yield %>
-            </div>
-            <div class="col-lg-4" >
-              <div class="panel panel-default" style="background-color: #F8F8F8;">
-                <div class="panel-body">
-                  <div style="text-align:center;color: #b47e1f;">
-                    <h3 style="margin-top: 20px;">What's New</h3>
-                  </div><hr>
-                  <div id="example1-container">
-                    <ul id="example1" style="height: 125px;width:350px">
-                      <li>Quick call feature - Speed dial your contacts with whom you interact most.</li>
-                      <li>SOS: with one single click - you can flash messages to your contacts along with you GPS location.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div><!--/span-->
-          </div><!--/row-->
+    <div>
 
-          <footer>
-
-          </footer>
-        </div>
-      </div> <!-- /container -->
-    
+      <%= yield %>
+    </div>
+    <footer>
+    </footer>
+  </div>
   </body>
 </html>

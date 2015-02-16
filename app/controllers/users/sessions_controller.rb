@@ -5,10 +5,18 @@ before_filter :configure_sign_in_params, only: [:create]
   def new
     super
   end
-
+# .role? :admin 
   # POST /resource/sign_in
   def create
-    super
+    self.resource = warden.authenticate!(auth_options)
+    # set_flash_message(:notice, :signed_in) if is_navigational_format?
+    sign_in(resource_name, resource)
+   # respond_with resource, :location => after_sign_in_path_for(resource)
+    if current_user                 
+      redirect_to admins_index_path
+    else
+      redirect_to root_url
+    end
   end
 
   # DELETE /resource/sign_out

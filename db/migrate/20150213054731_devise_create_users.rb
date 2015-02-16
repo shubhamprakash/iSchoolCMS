@@ -5,6 +5,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
+      t.string   :first_name
+      t.string   :last_name
+      t.text     :address
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
@@ -19,6 +23,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
 
+      
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at
