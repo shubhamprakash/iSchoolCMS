@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+superadmin = User.where(email: 'superadmin@test.com', first_name: 'super', last_name: 'admin').first_or_initialize
+superadmin.password = 'admin@123'
+superadmin.save!
+superadmin.super_admin!

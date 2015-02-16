@@ -15,12 +15,11 @@
  */
 
 	a{
-  	color: black;
   	float: left;	
   }
 
 	body{
-		/*margin-bottom: 50px;*/
+		margin-bottom: 50px;
 	}
 	
 	.container-fluid{
@@ -45,8 +44,8 @@
 	}
 
 	.link{
-		padding-left:39px;
-		margin-left: 10px;
+		
+		margin-left:49px;
 		margin-top:5px;
 	}
 
