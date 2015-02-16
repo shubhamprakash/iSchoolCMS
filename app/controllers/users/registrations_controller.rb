@@ -36,9 +36,9 @@ before_filter :configure_account_update_params, only: [:update]
     super
   end
 
-  # def after_sign_up_path_for(resource)
-  #   show_admins_index_path(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    admins_index_path(resource)
+  end
 
   protected
 
