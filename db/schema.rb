@@ -11,16 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213121731) do
+ActiveRecord::Schema.define(version: 20150218063214) do
 
-  create_table "accounts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "roles", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "profiles", force: :cascade do |t|
+    t.string   "first_name",   limit: 255
+    t.string   "last_name",    limit: 255
+    t.string   "standard",     limit: 255
+    t.decimal  "percentage",                 precision: 5, scale: 2
+    t.string   "parents_name", limit: 255
+    t.text     "address",      limit: 65535
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+    t.integer  "user_id",      limit: 4
   end
 
   create_table "users", force: :cascade do |t|

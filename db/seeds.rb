@@ -7,11 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-# superadmin = User.where(email: 'superadmin@test.com', first_name: 'super', last_name: 'admin').first_or_initialize
-# superadmin.password = 'admin@123'
-# superadmin.save!
-# superadmin.super_admin!
-
-admin = User.where(email: 'amitk7075@gmail.com', first_name: 'Amit', last_name: 'Kumar').first_or_initialize
-admin.password = '12345678'
-admin.save!
+user = User.where(email: 'superadmin@test.com', first_name: 'super', last_name: 'admin').first_or_initialize
+user.password = 'admin@123'
+user.save!
+user.super_admin!
