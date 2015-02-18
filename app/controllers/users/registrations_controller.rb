@@ -1,7 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 before_filter :configure_sign_up_params, only: [:create]
 before_filter :configure_account_update_params, only: [:update]
-
+  
   # GET /resource/sign_up
   def new
     super
@@ -24,7 +24,11 @@ before_filter :configure_account_update_params, only: [:update]
 
   # DELETE /resource
   def destroy
-    super
+    # @user = User.find_by(params[:id])
+    @user.destroy
+    if @user.destroy
+      redirect_to admins_index_path
+    end
   end
 
   # GET /resource/cancel
@@ -37,13 +41,13 @@ before_filter :configure_account_update_params, only: [:update]
   end
 
   def after_sign_up_path_for(resource)
-    admins_index_path(resource)
+    admins_index_path
   end
 
   protected
 
   def after_update_path_for(resource)
-    admins_index_path(resource)
+    admins_index_path
   end
 
   # You can put the params you want to permit in the empty array.
@@ -57,9 +61,9 @@ before_filter :configure_account_update_params, only: [:update]
   end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource)
-    super(resource)
-  end
+  # def after_sign_up_path_for(resource)
+  #   super(resource)
+  # end
 
   # The path used after sign up for inactive accounts.
   def after_inactive_sign_up_path_for(resource)

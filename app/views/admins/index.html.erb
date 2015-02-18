@@ -1,29 +1,44 @@
-<h2 style="text-align:center;font-weight:strong"><%= current_user.first_name %> <%= current_user.last_name %>  </h2>
+<h2 style="margin-left:175px;font-weight:strong;float: left;"><%= current_user.first_name %> <%= current_user.last_name %>  </h2>
+
+<%= form_tag(admins_index_path, :method => "get", id: "search-form") do %>
+  <p style="float: right;margin:20px 10px 0 0;">
+    <%= text_field_tag :search, params[:search], placeholder: "Search user", :class => "search-field" %>
+    <%= submit_tag "Search", :name => nil, :class => "login-button" %>
+  </p>
+<% end %><br><br>
+
+<p style="float: right;margin:10px -250px 0 0;">
+  <span style="float: left;margin-top:10px;font-size: 16px;color: purple;">Download in:</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= link_to "CSV", admins_index_path(format: "csv"), :class =>"csv-link" %> &nbsp;&nbsp;
+  <%= link_to "Excel", admins_index_path(format: "xls"), :class =>"csv-link" %>
+</p>
+
 <div class="container">
 	<div class="row">
-		<div class="col-md-12 col-md-offset-1">
+		<div class="col-md-10 col-md-offset-1">
 			<table class="table">
 				<caption style="text-align:center;font-size:16px;"><strong>Client Detail</strong></caption>
 					<tr>
 						
 						<th>Name</th>
 						<th>Address</th>
-						<th>Role </th>
+						<th>Account Type </th>
+						<th colspan="1"></th>
 					</tr>
 				<% @users.each do |user| %>
 					<tr>
 						<td><%= user.first_name %>&nbsp;<%= user.last_name %></td>
 						<td><%= user.address %></td>
+					
 						<%#= user.select :role_id, options_for_select(U.all.collect{|x| [x.role, x.id]}), class: "form-control"%>
 						<% if current_user.role == "super_admin" %>
 						<td><%= select("role", "role_id", User.pluck(:role, :id), { include_blank: true }) %></td>
 						<% else %>
-						<td><%= current_user.role %></td>
+						<td><%= user.role %></td>
 						<% end %>
 
-						<td><%#= user.submit "submit" %></td>
-						<%#= user.select(:role, [['Admin', 'admin'], ['Staff', 'staff'], ['Driver', 'driver']]) %>
-						<td><%= link_to "Remove", admins_index_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+						<td><%= link_to "Remove", user_registration_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 					</tr>
 				<% end %>
 			</table>

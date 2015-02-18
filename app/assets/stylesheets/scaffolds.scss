@@ -25,7 +25,8 @@ a {
   }
   &:hover {
     color: #fff;
-    background-color: #000;
+    background-color: #E6E6E6;
+    color: #00f;
   }
 }
 
@@ -41,7 +42,7 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: blue;
   display: table;
 }
 
